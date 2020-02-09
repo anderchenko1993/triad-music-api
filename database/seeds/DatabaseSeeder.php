@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
             ArtistaTableSeeder::class,      
             AlbumTableSeeder::class,      
             GeneroTableSeeder::class,
+            ArtistaAlbumSeeder::class,
+            ArtistaGeneroSeeder::class,
         ]);
     }
 }

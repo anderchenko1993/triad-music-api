@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateArtistaGeneroTable extends Migration
+class CreateHistoricoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateArtistaGeneroTable extends Migration
      */
     public function up()
     {
-        Schema::create('artista_genero', function (Blueprint $table) {
+        Schema::create('historico', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_artista')->unsigned();
-            $table->integer('id_genero')->unsigned();
-            $table->foreign('id_artista')->references('id')->on('artista');
-            $table->foreign('id_genero')->references('id')->on('genero');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateArtistaGeneroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artista_genero');
+        Schema::dropIfExists('historico');
     }
 }

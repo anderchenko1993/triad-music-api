@@ -15,8 +15,8 @@ class CreateArtistaAlbumTable extends Migration
     {
         Schema::create('artista_album', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_artista');
-            $table->integer('id_album');
+            $table->integer('id_artista')->unsigned();
+            $table->integer('id_album')->unsigned();
             $table->foreign('id_artista')->references('id')->on('artista');
             $table->foreign('id_album')->references('id')->on('album');
             $table->timestamps();
