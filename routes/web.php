@@ -16,5 +16,5 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('/busca', 'ArtistaController@busca');
-$router->get('/artista/{id}', 'ArtistaController@artista');
+$router->get('/artista/{id}', 'ArtistaController@getArtista');
 $router->get('/historico', 'HistoricoController@historico');
