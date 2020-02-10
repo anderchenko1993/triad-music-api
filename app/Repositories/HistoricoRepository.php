@@ -8,7 +8,9 @@ class HistoricoRepository
 {
     public static function busca($request) 
     {
-        return Historico::where('id_usuario', $request->usuario)->get();
+        return Historico::with('artista')
+        ->where('id_usuario', $request->usuario)
+        ->get();
     }    
 
 }
