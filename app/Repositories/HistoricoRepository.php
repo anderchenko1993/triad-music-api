@@ -6,20 +6,19 @@ use App\Models\Historico;
 
 class HistoricoRepository 
 {
-    public static function historico($user) 
+    public static function historico($request) 
     {
         return Historico::with('artista')
-        ->where('usuario', $user)
+        ->where('usuario', $request->bearerToken())
+        ->orderBy('id', 'desc')
         ->get();
     }    
 
-    public static function save($data, $user) {
-        foreach($data as $value) {
-            $historico = new Historico;
-            $historico->usuario = $user;
-            $historico->id_artista = $value->id;
-            $historico->save();
-        }
+    public static function save($request) {        
+        $historico = new Historico;
+        $historico->usuario = $request->bearerToken();
+        $historico->id_artista = $request->id;
+        $historico->save();        
     }
 
 }

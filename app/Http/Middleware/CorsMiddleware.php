@@ -2,6 +2,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Services\AuthService;
 
 class CorsMiddleware
 {
@@ -18,8 +19,17 @@ class CorsMiddleware
         header('Access-Control-Allow-Methods: GET, POST');
         header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
         header('Access-Control-Allow-Credentials: true');
+
+        if( $request->path() != 'login' ) 
+        {            
+            if( !$request->bearerToken() || 
+                !AuthService::tokenIsValid($request) ) 
+            {                
+                return response()->json(false);
+            }              
+        }
         
-        if (!$request->isMethod('options')) {
+        if(!$request->isMethod('options')) {
             return $next($request);
         }
     }

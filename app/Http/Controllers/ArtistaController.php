@@ -9,10 +9,8 @@ use App\Repositories\HistoricoRepository;
 
 class ArtistaController extends Controller 
 {
-    public function busca(Request $request) {    
-        $busca = [];
-        $busca = ArtistaRepository::busca($request);
-        HistoricoRepository::save($busca, $request->user);
+    public function busca(Request $request) {  
+        $busca = ArtistaRepository::busca($request);        
 
         return response()->json($busca);
     }
