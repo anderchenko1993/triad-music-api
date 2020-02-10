@@ -8,9 +8,9 @@ use App\Repositories\HistoricoRepository;
 
 class HistoricoController extends Controller 
 {
-    public function historico(Request $request) 
+    public function historico(Request $request, $user) 
     {        
-        $historico = HistoricoRepository::historico($request);
+        $historico = HistoricoRepository::historico($user);
 
         return response()->json($historico);
     }

@@ -18,4 +18,4 @@ $router->get('/', function () use ($router) {
 $router->post('/login', 'LoginController@login');
 $router->get('/busca', 'ArtistaController@busca');
 $router->get('/artista/{id}', 'ArtistaController@getArtista');
-$router->get('/historico', 'HistoricoController@historico');
+$router->get('/historico/{user}', 'HistoricoController@historico');

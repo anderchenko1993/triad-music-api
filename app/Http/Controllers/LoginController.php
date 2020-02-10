@@ -8,9 +8,7 @@ use App\Models\Usuario;
 
 class LoginController extends Controller 
 {
-    public function login(Request $request) {        
-        // dd($request->all());
-
+    public function login(Request $request) {               
         try {
             $usuario = Usuario::where('id_user_google', $request->id)
                         ->get()
