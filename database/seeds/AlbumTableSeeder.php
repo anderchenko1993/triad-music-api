@@ -69,7 +69,7 @@ class AlbumTableSeeder extends Seeder
 
         DB::table('album')->insert([
             'nome' => "Don't Waste Your Whishes",
-            'imagem' => "dontwasteyourwhises.jpg",
+            'imagem' => "dontwasteyourwishes.jpg",
             'data_lancamento' => "2016-11-18",
             'created_at' => date('Y-m-d H:i:s'),
         ]);

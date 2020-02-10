@@ -9,9 +9,9 @@ use App\Repositories\ArtistaRepository;
 class ArtistaController extends Controller 
 {
     public function busca(Request $request) {        
-        $artistas = ArtistaRepository::busca($request);
+        $busca = ArtistaRepository::busca($request);
 
-        return response()->json($artistas);
+        return response()->json($busca);
     }
 
     public function getArtista($id) {        

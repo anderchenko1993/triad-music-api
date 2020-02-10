@@ -14,21 +14,21 @@ class ArtistaTableSeeder extends Seeder
         DB::table('artista')->insert([
             'nome' => 'The Killers',
             'popularidade' => '12698.217',
-            'foto' => 'thekillers.png',
+            'foto' => 'albuns/thekillers.jpg',
             'created_at' => date('Y-m-d H:i:s'),            
         ]);
 
         DB::table('artista')->insert([
             'nome' => 'Linkin Park',
             'popularidade' => '17697.317',
-            'foto' => 'linkinpark.png',
+            'foto' => 'albuns/linkinpark.jpg',
             'created_at' => date('Y-m-d H:i:s'),            
         ]);
 
         DB::table('artista')->insert([
-            'nome' => 'Muse',
+            'nome' => 'Muse Band',
             'popularidade' => '8694.011',
-            'foto' => 'muse.png',
+            'foto' => 'albuns/muse.jpg',
             'created_at' => date('Y-m-d H:i:s'),            
         ]);
     }
